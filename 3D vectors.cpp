@@ -1,6 +1,3 @@
-/*Create a class of 3D vectors called.Include methods for finding magnitude, cross product, dot product, angle with another vector and the vector
-projection of the given vector on another.*/
-
 #include <cmath>
 #include <iostream>
 using namespace std;
