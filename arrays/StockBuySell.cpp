@@ -12,7 +12,7 @@ int profit(int arr[],int n){
 }
 
 int main(){
-    int n=5;
-    int arr[n]={1,5,3,8,12};
+    int n=7;
+    int arr[n]={100,180,260,310,40,535,695};
     cout<<profit(arr,n);
 }

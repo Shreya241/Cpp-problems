@@ -19,7 +19,7 @@ int storage(int arr[],int n){
 }
 
 int main(){
-    int n=5;
-    int arr[n]={5,0,6,2,3};
+    int n=6;
+    int arr[n]={3,0,0,2,0,4};
     cout<<storage(arr,n);
 }
