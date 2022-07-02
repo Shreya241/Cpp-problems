@@ -1,29 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int subarray(int arr[],int n,int sum){
-   int curr_sum=arr[0];
-   int start=0;
-   int i=1;
+void subarray(int arr[],int n){
+   int osum=(n*(n+1))/2;
+   int sum=0;
+   int k;
+   int prr[2];
+   sort(arr,arr+n);
+   int i=0;
    while(i<n){
-    curr_sum+=arr[i];
-    if(curr_sum>sum & start<i-1){
-       curr_sum=curr_sum-arr[start];
-       start++;
-    }
-    if(curr_sum=sum){
-        cout<<start<<" "<<i-1;
-        return 1;
-    }
-    i++;
+      sum+=arr[i];
+      if(arr[i]==arr[i+1]){
+         k=i;
+         prr[0]=arr[i];
+      }
+      i++;
    }
-cout<<0;
-return 0;
-   
+   prr[1]=arr[k]+(osum-sum);
 }
 
 int main(){
-int n=10,sum=15;
-int arr[n]={1,2,3,4,5,6,7,8,9,10};
-subarray(arr,n,sum);
+int n=3;
+int arr[n]={1,3,3};
+subarray(arr,n);
 }
