@@ -4,7 +4,7 @@
 void search(int n, char name[100], char data[100][100])
 {
     int i,c;
-    printf("\nenter number of students : ");
+    printf("\nEnter number of students : ");
     scanf("%d", &n);
     printf("\nEnter the names:");
     for (i = 0; i < n; i++)
