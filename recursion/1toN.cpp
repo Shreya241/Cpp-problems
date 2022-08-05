@@ -9,5 +9,5 @@ void num(int n){
 }
 
 int main(){
-    num(1);
+    num(10);
 }
