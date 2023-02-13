@@ -4,33 +4,19 @@ using namespace std;
  
 int main(){
    int n;cin>>n;
-   map<int,int>m;
-   for(int i=0;i<n;i++){
-    int j;
-    cin>>j;
-    m[j]++;
+   int s,arr[5]={0};
+   while(n--){
+      cin>>s;
+      arr[s]+=1;
    }
-   int c=0;
-   c=+m[4];
-
-   if(m[3]>m[1]){
-    c=c+m[3];
-    m[1]=0;
-   }else if(m[1]>m[3]){
-    c=c+m[3];
-    m[1]=m[3]-m[1];
-   }else if(m[1]==m[3]){
-    c=c+m[3];
-    m[3]=0;
-    m[1]=0;
+   int c=arr[4]+arr[3]+arr[2]/2;
+   arr[1]=arr[1]-arr[3];
+   if(arr[2]%2==1){
+      c+=1;
+      arr[1]-=2;
    }
-   c+=((2*m[2]+m[1])+3)/n;
-//    c=c+m[2]/2;
-//    m[2]=(m[2]*2)%4;
-//    if((m[2]+m[1])%4==0){
-//     c=c+(m[2]+m[1])/4;
-//    }else{
-//     c=c+(m[2]+m[1])/4+1;
-//    }
-   cout<<abs(c);
+   if(arr[1]>0){
+      c+=(arr[1]+3)/4;
+   }
+   cout<<c;
 }
