@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct Node{
@@ -11,11 +12,19 @@ struct Node{
   }
 };
 
-void postorder(Node *root){
-  if(root!=NULL){
-    postorder(root->left);
-    postorder(root->right);
-    cout<<root->key<<" ";
+void level(Node *root){
+  if(root==NULL){return;}
+  queue<Node*>q;
+  q.push(root);
+  while(!q.empty()){
+    Node *curr=q.front();
+    q.pop();
+    cout<<curr->key<<" ";
+    if(curr->left!=NULL){
+      q.push(curr->left);
+    }if(curr->right!=NULL){
+      q.push(curr->right);
+    }
   }
 }
 
@@ -25,5 +34,5 @@ int main(){
 	root->right=new Node(30);
 	root->right->left=new Node(40);
 	root->right->right=new Node(50);
-  postorder(root);
+  level(root);
 }
