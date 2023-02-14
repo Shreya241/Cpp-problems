@@ -3,24 +3,30 @@
 using namespace std;
  
 int main(){
-  float n,m,a,b;cin>>n>>m>>a>>b;
-  float k=b/m;
-  int p=0,i=0,j=0;
-  if(k<a){
-    while(n>0){
+  int n,m,a,b;cin>>n>>m>>a>>b;
+  int c=0;
+  while(n>0){
+    if(a==1){
+      if(a*n>b/m){
+      cout<<b;}
+      else cout<<a*n;
+      return 0;
+    }
+    else if(b/m<=a){
+      if(n%m==0){
         n=n-m;
-        p+=b;
-        }
-  }
-    while(n>0 ){
+        c+=b;
+      }else if(b>a){
         n--;
-        i+=a;
-        j+=b;
-    }
-    if(j<i){
-        p+=j;
+        c+=a;
+      }else{
+        n=n-m;
+        c+=b;
+      }
     }else{
-        p+=i;
+      cout<<n*a;
+      return 0;
     }
-  cout<<p;
+  }
+  cout<<c;
 }
