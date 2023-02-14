@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 struct Node{
@@ -10,17 +11,31 @@ struct Node{
     right=left=NULL;
   }
 };
-int mlevel=0;
-void pleft(Node *root,int level){
-  if(root==NULL){
+
+void pleft(Node *root){
+   if(root==NULL){
     return;
-  }
-  if(mlevel<level){
-     cout<<root->key<<" ";
-     mlevel=level;
-  }
-  pleft(root->left,level+1);
-  pleft(root->right,level+1);
+}
+   queue<Node*>q;
+   q.push(root);
+   while(!q.empty()){
+    int c=q.size();
+    for(int i=0;i<c;i++){
+        Node* curr=q.front();
+        q.pop();
+        if(i==0){
+            cout<<curr->key<<" ";
+        }
+        if(curr->left !=NULL){
+            q.push(curr->left);
+        }
+        if(curr->right !=NULL){
+            q.push(curr->right);
+        }
+    }
+   }
+
+   
 }
 
 int main(){
@@ -29,5 +44,5 @@ int main(){
 	root->right=new Node(30);
 	root->right->left=new Node(40);
 	root->right->right=new Node(50);
-    pleft(root,1);
+    pleft(root);
 }
