@@ -1,0 +1,1 @@
+{"name":"Local: 4th que","url":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/4th que.cpp","tests":[{"id":1676474203490,"input":"4\n5 2\nabcdd\nac\n3 3\nabc\nxyz\n2 4\naa\naaaa\n1 3\na\naax","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/4th que.cpp","group":"local","local":true}
