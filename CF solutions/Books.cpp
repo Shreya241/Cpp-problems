@@ -3,23 +3,28 @@
 using namespace std;
  
 int main(){
-   int n;cin>>n;
-   int m;cin>>m;
-   int arr[n];
-   int c=0;int s=0;int ms=0;
-   for(int i=0; i<n; i++){
+   long long n,t,c=0,s=0;
+   cin>>n;
+   cin>>t;
+   long long arr[n];
+   for(long long i=0; i<n; i++){
     cin>>arr[i];
    }
-   for(int i=0; i<n; i++){
-    for(int j=i;j<n;j++){
-       if(s<m){
-        s+=arr[j];
-        if(s<=m)c++;
-        ms=max(c,ms);
-       }
+   long long i=0,j=n-1;
+   if(n==1 && t<arr[0]){
+      cout<<0;
+      return 0;
+   }else if(n==1 && t>arr[0]){
+      cout<<1;
+      return 0;
    }
-   c=0;
-   s=0;
-}
-   cout<<ms;
+   while(c<t && i<n){
+      c+=arr[i];
+      if(c<t)i++;
+   }
+   while(s<t && j>=0){
+      s+=arr[j];
+      if(s<t)j--;
+   }
+   cout<<max(i,n-j+1);
 }
