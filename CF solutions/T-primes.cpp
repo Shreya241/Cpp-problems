@@ -1,18 +1,19 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
  
 int main(){
- int n;
+int n;
  cin>>n;
  while(n--){
-    long long a,j=1;
+    long long a,j=0;
     cin>>a;
-    for(long long i=2;i<=a;i++){
-        if(a%i==0){
+    long long ans=sqrt(a);
+    for(int i=1;i<ans;i++){
+        if(ans%i==0 && ans*ans==a){
             j++;
         }
     }
-    if(j==3){
+    if(j==1){
         cout<<"YES"<<endl;
     }else{
         cout<<"NO"<<endl;
