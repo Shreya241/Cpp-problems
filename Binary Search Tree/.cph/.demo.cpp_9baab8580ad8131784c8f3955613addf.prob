@@ -1,0 +1,1 @@
+{"name":"Local: demo","url":"/Users/Academics/cpp/Cpp-problems-main/Binary Search Tree/demo.cpp","tests":[{"id":1677993523075,"input":"2\n5\n1 2 3 4 5\n4\n1 2 4 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/Academics/cpp/Cpp-problems-main/Binary Search Tree/demo.cpp","group":"local","local":true}
