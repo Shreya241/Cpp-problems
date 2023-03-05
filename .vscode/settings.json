@@ -4,6 +4,8 @@
         "__bit_reference": "cpp",
         "vector": "cpp",
         "string": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "stack": "cpp",
+        "iosfwd": "cpp"
     }
 }
