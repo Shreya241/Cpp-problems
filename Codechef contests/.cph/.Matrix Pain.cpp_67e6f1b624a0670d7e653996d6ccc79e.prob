@@ -1,0 +1,1 @@
+{"name":"Local: Matrix Pain","url":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/Matrix Pain.cpp","tests":[{"id":1678289511591,"input":"2\n2 2 2\n1 2 0\n0 1 2\n1 3 1\n1 2 6","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/Matrix Pain.cpp","group":"local","local":true}
