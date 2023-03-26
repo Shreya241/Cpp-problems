@@ -4,16 +4,15 @@ using namespace std;
  
  
 void funct(){
-   int k;cin>>k;
-    int c=0;
-    int x;
-    map<int,int>mp;
-    for(int i=0;i<k;i++){
-        cin>>x;
-        c+=mp[x-i];
-        mp[x-i]++;
+    string s;cin>>s;
+    string w;cin>>w;
+    int d=0;
+    for(int i=0;i<w.length()-1;i++){
+        int p=s.find(w[i]);
+        int q=s.find(w[i+1]);
+        d+=abs(p-q);
     }
-    cout<<c<<endl;
+    cout<<d<<endl;
 }
 
  

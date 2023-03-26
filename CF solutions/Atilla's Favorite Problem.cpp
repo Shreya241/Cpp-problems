@@ -4,16 +4,11 @@ using namespace std;
  
  
 void funct(){
-   int k;cin>>k;
-    int c=0;
-    int x;
-    map<int,int>mp;
-    for(int i=0;i<k;i++){
-        cin>>x;
-        c+=mp[x-i];
-        mp[x-i]++;
-    }
-    cout<<c<<endl;
+    int n;cin>>n;
+    string s;cin>>s;
+    sort(s.begin(),s.end());
+    int p=s[n-1];
+    cout<<p-96<<endl;
 }
 
  
