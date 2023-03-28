@@ -7,6 +7,8 @@
         "ostream": "cpp",
         "stack": "cpp",
         "iosfwd": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "queue": "cpp",
+        "__config": "cpp"
     }
 }
