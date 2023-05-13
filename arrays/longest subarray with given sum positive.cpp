@@ -9,7 +9,7 @@ void funct(){
    int n=5;
    int s=arr[0];
    int l=0,r=0,ml=0;
-   while(r<n){
+   while(r<n){ 
 
     while(s>k && l<=r){
         s-=l;
