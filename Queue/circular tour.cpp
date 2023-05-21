@@ -1,4 +1,4 @@
-//{ Driver Code Starts
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -9,21 +9,9 @@ struct petrolPump
 };
 
 
-// } Driver Code Ends
-/*
-The structure of petrolPump is 
-struct petrolPump
-{
-    int petrol;
-    int distance;
-};*/
-
-/*You are required to complete this method*/
 class Solution{
   public:
-  
-    //Function to find starting point where the truck can start to get through
-    //the complete circle without exhausting its petrol in between.
+
     int tour(petrolPump p[],int n)
     {
        int sum=0;
@@ -45,10 +33,6 @@ class Solution{
     }
 };
 
-
-
-//{ Driver Code Starts.
-
 int main()
 {
     int t;
@@ -64,5 +48,3 @@ int main()
         cout<<obj.tour(p,n)<<endl;
     }
 }
-
-// } Driver Code Ends

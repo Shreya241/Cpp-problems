@@ -1,5 +1,3 @@
-//{ Driver Code Starts
-// Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -25,12 +23,7 @@ int main() {
         cout << endl;
     }
 }
-// } Driver Code Ends
 
-
-// User function Template for C++
-
-// Function to reverse first k elements of a queue.
 queue<int> modifyQueue(queue<int> q, int k) {
     stack<int>s;
     int p = q.size() - k;

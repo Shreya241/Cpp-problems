@@ -1,5 +1,4 @@
-//{ Driver Code Starts
-//Initial Template for C++
+
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -27,12 +26,7 @@ int main()
     cout<<endl; 
     }
 }
-// } Driver Code Ends
 
-
-//function Template for C++
-
-//Function to reverse the queue.
 queue<int> rev(queue<int> q)
 {
     stack<int>st;
