@@ -25,5 +25,5 @@ int main(){
 	root->right=new Node(30);
 	root->right->left=new Node(40);
 	root->right->right=new Node(50);
-    cout<<height(root);
+  cout<<height(root);
 }
