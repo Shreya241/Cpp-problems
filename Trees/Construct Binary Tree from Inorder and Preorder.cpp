@@ -12,11 +12,11 @@ struct Node
   }
 };
 
-void inorder(Node *root){
+void printinorder(Node *root){
     if(root!=NULL){
-        inorder(root->left);
+        printinorder(root->left);
         cout<<root->key<<" ";
-        inorder(root->right);    
+        printinorder(root->right);    
     }
 }  
 
@@ -43,5 +43,5 @@ int main() {
 	int pre[]={10,20,30,40,50};
 	int n=sizeof(in)/sizeof(in[0]);
 	Node *root=cTree(in, pre, 0, n-1);
-	inorder(root);
+	printinorder(root);
 }

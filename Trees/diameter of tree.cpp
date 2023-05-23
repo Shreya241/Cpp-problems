@@ -42,3 +42,15 @@ int main() {
 	
 	cout<<diam(root);
 }
+
+
+/*Therefore, final Diameter of a node can be calculated as:
+
+Diameter = maximum(lDiameter, rDiameter, 1 + lHeight + rHeight)
+
+Where,
+lDiameter = Diameter of left subtree
+rDiameter = Diameter of right subtree
+lHeight = Height of left subtree
+rHeight = Height of right subtree
+*/
