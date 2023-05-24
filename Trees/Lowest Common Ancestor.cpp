@@ -24,6 +24,17 @@ bool findPath(Node *root, vector<Node *> &p, int n){
 }
 
 Node *lca(Node *root, int n1, int n2){
+
+    // if(root==NULL) return NULL;
+    //    if(root->data==n1 || root->data==n2) return root;
+       
+    //    Node* left=lca(root->left,n1,n2);
+    //    Node* right=lca(root->right,n1,n2);
+       
+    //    if(left==NULL) return right;
+    //    if(right==NULL) return left;
+    //    return root;
+
     vector <Node *> path1, path2;
     if(findPath(root,path1,n1)==false||findPath(root,path2,n2)==false)
         return NULL;
