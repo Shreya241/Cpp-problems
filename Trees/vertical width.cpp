@@ -83,26 +83,6 @@ Node *buildTree(string str) {
 int verticalWidth(Node* root);
 
 
-
-
-// } Driver Code Ends
-//User function Template for C++
-
-/*Structure of node of binary tree is as follows
-struct Node
-{
-    int data;
-    struct Node* left;
-    struct Node* right;
-    
-    Node(int x){
-        data = x;
-        left = right = NULL;
-    }
-};
-*/
-
-
 unordered_set<int>st;
 
 void inorder(Node* root, int hd){
