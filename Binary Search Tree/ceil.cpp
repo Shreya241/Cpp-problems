@@ -36,7 +36,7 @@ int main() {
 	root->right->left=new Node(18);
 	root->right->left->left=new Node(16);
 	root->right->right=new Node(80);
-	int x=17;
+	int x=15;
 	
-	cout<<"Ceil: "<<(ceil(root,17)->key);
+	cout<<"Ceil: "<<(ceil(root,15)->key);
 }
