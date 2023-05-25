@@ -1,73 +1,153 @@
-// C++ Program to print Bottom View of Binary Tree
-#include<bits/stdc++.h>
+//{ Driver Code Starts
+#include <bits/stdc++.h>
 using namespace std;
+#define MAX_HEIGHT 100000
 
-// Tree node class
+// Tree Node
 struct Node
 {
-	int data; //data of the node
-	int hd; //horizontal distance of the node
-	Node *left, *right; //left and right references
-
-	// Constructor of tree node
-	Node(int key)
-	{
-		data = key;
-		hd = INT_MAX;
-		left = right = NULL;
-	}
+    int data;
+    Node* left;
+    Node* right;
 };
 
-
-void bottomView(Node *root)
+// Utility function to create a new Tree Node
+Node* newNode(int val)
 {
-	if (root == NULL)
-		return;
+    Node* temp = new Node;
+    temp->data = val;
+    temp->left = NULL;
+    temp->right = NULL;
 
-	int hd = 0;
+    return temp;
+}
 
+
+vector <int> bottomView(Node *root);
+
+// Function to Build Tree
+Node* buildTree(string str)
+{
+    // Corner Case
+    if(str.length() == 0 || str[0] == 'N')
+        return NULL;
+
+    // Creating vector of strings from input
+    // string after spliting by space
+    vector<string> ip;
+
+    istringstream iss(str);
+    for(string str; iss >> str; )
+        ip.push_back(str);
+
+    // Create the root of the tree
+    Node* root = newNode(stoi(ip[0]));
+
+    // Push the root to the queue
+    queue<Node*> queue;
+    queue.push(root);
+
+    // Starting from the second element
+    int i = 1;
+    while(!queue.empty() && i < ip.size()) {
+
+        // Get and remove the front of the queue
+        Node* currNode = queue.front();
+        queue.pop();
+
+        // Get the current node's value from the string
+        string currVal = ip[i];
+
+        // If the left child is not null
+        if(currVal != "N") {
+
+            // Create the left child for the current node
+            currNode->left = newNode(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->left);
+        }
+
+        // For the right child
+        i++;
+        if(i >= ip.size())
+            break;
+        currVal = ip[i];
+
+        // If the right child is not null
+        if(currVal != "N") {
+
+            // Create the right child for the current node
+            currNode->right = newNode(stoi(currVal));
+
+            // Push it to the queue
+            queue.push(currNode->right);
+        }
+        i++;
+    }
+
+    return root;
+}
+
+
+// } Driver Code Ends
+//Function to return a list containing the bottom view of the given tree.
+
+class Solution {
+  public:
+    vector <int> bottomView(Node *root) {
 	map<int, int> m;
-
-	queue<Node *> q;
-
-	root->hd = hd;
-	q.push(root); 
+	vector<int>as;
+	 if (root == NULL)
+		return as;
+	queue<pair<Node *,int>> q;
+	q.push({root,0}); 
 
 	while (!q.empty())
 	{
-		Node *temp = q.front();
+		Node *temp = q.front().first;
+		int x=q.front().second;
 		q.pop();
-
-		hd = temp->hd;
-		m[hd] = temp->data;
+		if(m.find(x)!=m.end()){
+		    m.erase(x);
+		}
+		m[x] = temp->data;
 		if (temp->left != NULL)
 		{
-			temp->left->hd = hd-1;
-			q.push(temp->left);
+			q.push({temp->left,x-1});
 		}
 		if (temp->right != NULL)
 		{
-			temp->right->hd = hd+1;
-			q.push(temp->right);
+			q.push({temp->right,x+1});
 		}
 	}
-	for (auto i = m.begin(); i != m.end(); ++i)
-		cout << i->second << " ";
+	for (auto i:m)
+		as.push_back(i.second);
+	 return as;
+    }
+   
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    string tc;
+    getline(cin, tc);
+    t=stoi(tc);
+    while(t--)
+    {
+        string s ,ch;
+        getline(cin, s);
+        Node* root = buildTree(s);
+        Solution ob;
+        vector <int> res = ob.bottomView(root);
+        for (int i : res) cout << i << " ";
+        cout << endl;
+    }
+    return 0;
 }
 
-// Driver Code
-int main()
-{
-	Node *root = new Node(20);
-	root->left = new Node(8);
-	root->right = new Node(22);
-	root->left->left = new Node(5);
-	root->left->right = new Node(3);
-	root->right->left = new Node(4);
-	root->right->right = new Node(25);
-	root->left->right->left = new Node(10);
-	root->left->right->right = new Node(14);
-	cout << "Bottom view of the given binary tree :\n";
-	bottomView(root);
-	return 0;
-}
+
+
+// } Driver Code Ends
