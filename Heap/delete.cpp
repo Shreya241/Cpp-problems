@@ -68,7 +68,7 @@ class Minheap{
         }
     }
     void deleteKey(int i){
-        swap(arr[i],INT_MIN);
+        decrease_key(i,INT_MIN);
         extract_min();
     }
 };
@@ -79,8 +79,8 @@ int main(){
     h.insert(2);
     h.insert(15);
     h.insert(20);
-    cout<<h.extract_min()<<" ";
-    h.decrease_key(2, 1);
+    //cout<<h.extract_min()<<" ";
+    h.deleteKey(0);
     cout<<h.extract_min()<<" ";
     return 0;
 }
