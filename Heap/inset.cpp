@@ -20,6 +20,7 @@ class Minheap{
     int parent(int i){
         return (i-1)/2;
     }
+    
     void insert(int x){
         if(size==capacity)return;
         size++;
