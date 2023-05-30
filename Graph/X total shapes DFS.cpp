@@ -1,4 +1,4 @@
-//{ Driver Code Starts
+//{ Driver Code Starts BFS
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -13,25 +13,19 @@ class Solution
       int n=grid.size();
       int m=grid[0].size();
       vis[r][c]=1;
-      queue<pair<int,int>>q;
-      q.push({r,c});
       int rN[4]={0,-1,0,1};
       int cN[4]={-1,0,1,0};
-      while(!q.empty()){
-          int x=q.front().first;
-          int y=q.front().second;
-          q.pop();
+
           for(int i=0;i<4;i++){
-              int dx=x+rN[i];
-              int dy=y+cN[i];
+              int dx=r+rN[i];
+              int dy=c+cN[i];
               if(dx>=0 && dy>=0 && dx<n && dy<m && !vis[dx][dy] && grid[dx][dy]=='X'){
+                  dfs(grid,vis,r,c);
                   vis[dx][dy]=1;
-                  q.push({dx,dy});
               }
           }
       }
       
-  }
     
     
     int xShape(vector<vector<char>>& grid) 

@@ -28,7 +28,8 @@ int BFSDin(vector<int> adj[], int V){
 		
     for(int i=0;i<V;i++){
         if(visited[i]==false)
-            {BFS(adj,i,visited);count++;}
+            {BFS(adj,i,visited);
+			count++;}
     }
 
     return count;
