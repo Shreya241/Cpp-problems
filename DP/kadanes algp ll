@@ -1,0 +1,55 @@
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+//User function Template for C++
+
+class Solution
+{
+    public:
+    //Function to return the maximum sum without adding adjacent elements.
+    long long maximumSum(int arr[], int n)
+    {
+     vector<long long>v(n);
+       v[0]=arr[0];
+       v[1]=max(arr[0],arr[1]);
+        if(n == 1){
+          return max(v[0] , v[1]);
+        }
+       for(int i=2;i<n;i++){
+           v[i]=max(max(v[i-2]+arr[i],(long long)arr[i]),v[i-1]);
+       }
+       return v[n-1];
+    }
+};
+
+//{ Driver Code Starts.
+
+
+int main() {
+    
+    //taking total testcases
+	int testcases;
+	cin>>testcases;
+	while(testcases--)
+	{
+	    //taking size of array
+	    int sizeOfArray;
+	    cin>>sizeOfArray;
+	    
+	    int arr[sizeOfArray];
+	    
+	    //inserting elements in the array
+	    for(int i=0;i<sizeOfArray;i++)
+	    cin>>arr[i];
+	    Solution ob;
+	    //calling function maximumSum()
+	    cout<<ob.maximumSum(arr,sizeOfArray)<<endl;
+	    
+	}
+	return 0;
+}
+// } Driver Code Ends
