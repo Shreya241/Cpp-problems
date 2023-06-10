@@ -15,10 +15,7 @@ int solve(vector<int> &cuts,int i,int j){
 }
 
 int cost(int n, int c, vector<int> &cuts){
-    cuts.push_back(n);
-    cuts.insert(cuts.begin(),0);
-    sort(cuts.begin(),cuts.end());
-    return solve(cuts,1,c);
+    ;
 }
 
 //memoisation
