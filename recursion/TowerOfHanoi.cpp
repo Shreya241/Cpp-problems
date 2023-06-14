@@ -1,20 +1,23 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-long long ToH(int n, char A, char B,char C){
-    int sum=0;
-     if(n==1){
-         cout<<"move disk"<<n<<"from rod"<<from<<"to rod"<<to<<endl;
-         return 1;
-     }
-     sum=1+ToH(n-1,from,aux,to);
-     cout<<"move disk"<<n<<"from rod"<<from<<"to rod"<<to<<endl;
-     sum+=ToH(n-1,from,aux,to);
-     return sum;
+void towerOfHanoi(int n, char from_rod, char to_rod,
+				char aux_rod)
+{
+	if (n == 0) {
+		return;
+	}
+	towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
+	cout << "Move disk " << n << " from rod " << from_rod
+		<< " to rod " << to_rod << endl;
+	towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
 }
 
-int main(){
-    int n;cin>>n;
-    cout<<  ToH(n,'A','B','C');
-    return 0;   
+
+int main()
+{
+	int N = 3;
+
+	towerOfHanoi(N, 'A', 'C', 'B');
+	return 0;
 }

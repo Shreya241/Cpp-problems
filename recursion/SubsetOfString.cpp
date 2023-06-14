@@ -1,18 +1,24 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void subset(string s, string curr="",int i=0){
-  if(i==s.length()){
-    cout<<curr<<endl;
-    return;
-  }
-  subset(s,curr,i+1);
-  subset(s,curr+s[i],i+1);
+
+void printSub(string str, string curr, int index)
+{
+	if(index == str.length())
+	{
+		cout<<curr<<" ";
+		return;
+	}
+
+	printSub(str, curr, index + 1);
+	printSub(str, curr+str[index], index + 1);
 }
-
-int main(){
-    string shre;
-    cin>>shre;
-    subset(shre);
-
+	
+int main() {
+	
+	string str = "ABC";
+    	
+    printSub(str, "", 0);
+	
+	return 0;
 }
