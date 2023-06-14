@@ -23,7 +23,7 @@ void print_numbers(int n) {
 }
 
 int main() {
-    int n = 10; // Change this value to print a different number of terms
+    int n = 10;
     print_numbers(n);
 
     return 0;
