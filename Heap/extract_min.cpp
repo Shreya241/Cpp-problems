@@ -37,7 +37,7 @@ class Minheap{
         if(lt<size && arr[lt]<arr[i]){
             smallest=lt;
         }
-        if(rt<size && arr[lt]<arr[smallest]){
+        if(rt<size && arr[rt]<arr[smallest]){
             smallest=rt;
         }
         if(smallest!=i){
