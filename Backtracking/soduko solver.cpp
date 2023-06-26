@@ -1,15 +1,8 @@
-//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
-// UNASSIGNED is used for empty cells in sudoku grid 
 #define UNASSIGNED 0  
+#define N 9
 
-// N is used for the size of Sudoku grid.  
-// Size will be NxN  
-#define N 9  
-
-
-// } Driver Code Ends
 class Solution 
 {
     public:
@@ -40,12 +33,12 @@ class Solution
         return true;
     }
     
-    bool SolveSudoku(int grid[N][N])  
+bool SolveSudoku(int grid[N][N])  
     { 
          solve(grid);
     }
     
-   bool isValid(int grid[N][N],int row,int col,int c)
+bool isValid(int grid[N][N],int row,int col,int c)
     {
         for(int i=0;i<9;i++)
         {
@@ -55,7 +48,7 @@ class Solution
         }
         return true;
     }
-    void printGrid (int grid[N][N]) 
+void printGrid (int grid[N][N]) 
     {
         for(int i=0;i<9;i++)
         {
@@ -64,8 +57,6 @@ class Solution
         }
     }
 };
-
-//{ Driver Code Starts.
 
 int main() {
 	int t;
@@ -90,4 +81,3 @@ int main() {
 	
 	return 0;
 }
-// } Driver Code Ends
