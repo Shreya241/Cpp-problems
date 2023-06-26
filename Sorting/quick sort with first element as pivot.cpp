@@ -12,7 +12,6 @@ right to it.*/
 int partition(int arr[], int low, int high)
 {
 
-	// First element as pivot
 	int pivot = arr[low];
 	int st = low; // st points to the starting of array
 	int end = high; // end points to the ending of the array
