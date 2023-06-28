@@ -42,7 +42,7 @@ int editDistance(string str1, string str2)
     return solve(str1,str2,n-1,m-1,dp);
 }
 
-//tabulisation
+//tabulation
 
 
 int editDistance(string s, string t)
