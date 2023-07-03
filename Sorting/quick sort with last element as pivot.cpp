@@ -44,3 +44,11 @@ int main() {
   cout << "Sorted array in ascending order: \n";
   printArray(data, n);
 }
+
+
+// Time Complexity	 
+// Best	O(n*log n)
+// Worst	O(n2)
+// Average	O(n*log n)
+// Space Complexity	O(log n)
+// Stability	No

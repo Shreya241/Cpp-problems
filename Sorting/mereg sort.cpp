@@ -61,3 +61,11 @@ int main(){
   printArray(arr, size);
   return 0;
 }
+
+
+// Time Complexity	 
+// Best	O(n*log n)
+// Worst	O(n*log n)
+// Average	O(n*log n)
+// Space Complexity	O(n)
+// Stability	Yes
