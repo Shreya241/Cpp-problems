@@ -1,18 +1,28 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
-int del(int arr[],int n, int x){
-
-    int i;
-    for(i=0;i<n;i++){
-        if(arr[i]==x)
-            break;
+int main(){
+    int n=7;
+    vector<int>v;
+    for(int i=0;i<n;i++){
+        cin>>v[i];
     }
-    if(i==n){
-        return n;
+    bool flag=true;
+    int p=0;
+    while(p<n){
+        if(flag){
+            if(v[p]>v[p+1]){
+                swap(v[p],v[p+1]);
+            }
+        }else{
+            if(v[p]<v[p+1]){
+                swap(v[p],v[p+1]);
+            }
+        }
+        p++;
+        flag!=flag;
     }
-    for(int j=i;j<n-1;j++){
-        arr[j]=arr[j+1];
+    for(int i=0;i<n;i++){
+        cout<<v[i]<<"->";
     }
-    return n-1;
+    cout<<"NULL";
 }
