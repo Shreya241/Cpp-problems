@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        stack<char>st;
+        stack<int>st;
         st.push(-1);
         int ms=0;
         for(int i=0;i<s.size();i++){
