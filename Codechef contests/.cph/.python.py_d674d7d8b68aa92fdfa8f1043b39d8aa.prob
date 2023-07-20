@@ -1,0 +1,1 @@
+{"name":"Local: python","url":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/python.py","tests":[{"id":1689780960198,"input":"3\n2\n1 6\n4 9\n2\n1 9\n4 6\n4\n10 10\n23 55\n21 80\n105 91","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/Academics/cpp/Cpp-problems-main/Codechef contests/python.py","group":"local","local":true}
