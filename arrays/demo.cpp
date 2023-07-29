@@ -1,26 +1,29 @@
-#include<bits/stdc++.h>
-using namespace std;
-bool isPrime(int n){
-    if(n<=1){
-        return false;
-    }else{
-        for(int i=2;i*i<=n;i++){
-            if(n%i==0) return false;
+string findun(const string& str, const string& pattern) {
+    vector<int> uni;
+    int n = str.length();
+    int pl = pattern.length();
+
+    for (int i = 0; i <= n - pl; i++) {
+        bool isMatch = true;
+        for (int j = 0; j < pl; j++) {
+            if (pattern[j] != '#' && str[i + j] != pattern[j]) {
+                isMatch = false;
+                break;
+            }
+        }
+        if (isMatch) {
+            uni.push_back(i + 1);
         }
     }
-    return true;
-}
-int main(){
-    int n;cin>>n;
-    vector<int>v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i];
+
+    if (uni.empty()) {
+        return "0";
     }
-    int a,b;
-    cin>>a>>b;
-    int ans=0;
-    for(int i=a;i<=b;i++){
-        if(isPrime(v[i])) ans++;
+
+    string un = "";
+    for (int idx : uni) {
+        un += to_string(idx);
     }
-    cout<<ans;
+
+    return un;
 }
